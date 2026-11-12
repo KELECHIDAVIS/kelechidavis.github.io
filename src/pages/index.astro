@@ -21,7 +21,7 @@ const awards = (await getCollection('awards')).sort(
     </section>
 
     <aside class="sidebar">
-      <h2>Awards</h2>
+      <h2>Honors & Awards</h2>
       {awards.length === 0 && <p>Coming soon.</p>}
       <ul class="awards">
         {awards.map((a) => (
