@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const items = (await getCollection('media')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+<Base title="Fun">
+  <h1>Fun</h1>
+  <table>
+    <thead><tr><th>Title</th><th>Type</th><th>Rating</th><th>Notes</th></tr></thead>
+    <tbody>
+      {items.map((m) => (
+        <tr>
+          <td>{m.data.title}</td>
+          <td>{m.data.type}</td>
+          <td>{m.data.rating}/10</td>
+          <td>{m.data.note}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</Base>

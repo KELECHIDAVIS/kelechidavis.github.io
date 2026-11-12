@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import { Content as Bio } from '../data/bio.md';
+import { getCollection } from 'astro:content';
+
+const awards = (await getCollection('awards')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+<Base title="Your Name">
+  <h1>Your Name</h1>
+  <Bio />
+  <h2>Awards</h2>
+  <ul>
+    {awards.map((a) => (
+      <li><strong>{a.data.title}</strong>, {a.data.org} ({a.data.date.getFullYear()})</li>
+    ))}
+  </ul>
+</Base>

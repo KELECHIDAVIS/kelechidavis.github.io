@@ -1,0 +1,24 @@
+---
+import '../styles/global.css';
+const { title: t, frontmatter } = Astro.props;
+const title = t ?? frontmatter?.title ?? 'Your Name';
+const nav = [
+  ['/', 'Home'],
+  ['/presentations', 'Presentations'],
+  ['/projects', 'Projects'],
+  ['/experience', 'Experience & CV'],
+  ['/blog', 'Blog'],
+  ['/fun', 'Fun'],
+];
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav>{nav.map(([href, label]) => <a href={href}>{label}</a>)}</nav>
+    <main><slot /></main>
+  </body>
+</html>
