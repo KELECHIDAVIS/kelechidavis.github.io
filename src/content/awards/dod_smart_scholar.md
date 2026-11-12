@@ -1,5 +1,5 @@
 ---
-title: "DOD SMART Scholarship, Full Merit Based Scholarship"
-org: "US Navy"
+title: "DoD SMART Scholarship (Full-Tuition)"
+org: "US Department of Defense"
 date: 2024-04-01
 ---
