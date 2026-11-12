@@ -13,6 +13,7 @@ const talks = (await getCollection('talks')).sort(
       <h2>{t.data.title}</h2>
       <p>{t.data.venue}, {t.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}</p>
       <p>{t.data.summary}</p>
+      {t.data.video && <a href={t.data.video}>Video</a>}
       {t.data.slides && <a href={t.data.slides}>Slides</a>}
     </article>
   ))}
