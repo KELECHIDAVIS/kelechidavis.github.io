@@ -7,13 +7,30 @@ const awards = (await getCollection('awards')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 ---
-<Base title="Your Name">
-  <h1>Your Name</h1>
-  <Bio />
-  <h2>Awards</h2>
-  <ul>
-    {awards.map((a) => (
-      <li><strong>{a.data.title}</strong>, {a.data.org} ({a.data.date.getFullYear()})</li>
-    ))}
-  </ul>
+<Base title="Your Name" wide>
+  <div class="home">
+    <section>
+      <div class="hero">
+        <img src="/images/me.jpg" alt="Your Name" />
+        <div>
+          <h1>Kelechi D. Duru</h1>
+          <p class="tagline">“If you can’t go a day without thinking about something, don’t let a day pass where you don’t work towards it.”</p>
+        </div>
+      </div>
+      <div class="bio"><Bio /></div>
+    </section>
+
+    <aside class="sidebar">
+      <h2>Awards</h2>
+      {awards.length === 0 && <p>Coming soon.</p>}
+      <ul class="awards">
+        {awards.map((a) => (
+          <li>
+            <strong>{a.data.title}</strong>
+            <div class="meta">{a.data.org}, {a.data.date.getFullYear()}</div>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  </div>
 </Base>

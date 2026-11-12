@@ -1,7 +1,10 @@
 ---
 import '../styles/global.css';
-const { title: t, frontmatter } = Astro.props;
+const { title: t, frontmatter, wide } = Astro.props;
+const cls = wide ? 'container wide' : 'container';
 const title = t ?? frontmatter?.title ?? 'Your Name';
+const path = Astro.url.pathname;
+const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
 const nav = [
   ['/', 'Home'],
   ['/presentations', 'Presentations'],
@@ -18,7 +21,15 @@ const nav = [
     <title>{title}</title>
   </head>
   <body>
-    <nav>{nav.map(([href, label]) => <a href={href}>{label}</a>)}</nav>
-    <main><slot /></main>
+    <header class="site-nav">
+      <nav class={cls}>
+        {nav.map(([href, label]) => (
+          <a href={href} aria-current={isActive(href) ? 'page' : undefined}>{label}</a>
+        ))}
+      </nav>
+    </header>
+    <main class={cls}>
+      <slot />
+    </main>
   </body>
 </html>
