@@ -21,6 +21,7 @@ const talks = defineCollection({
     venue: z.string(),
     date: z.coerce.date(),
     summary: z.string(),
+    video: z.string().url().optional(),
     slides: z.string().url().optional(),
   }),
 });
