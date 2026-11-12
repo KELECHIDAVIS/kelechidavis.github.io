@@ -1,5 +1,3 @@
-> “If you can’t go a day without thinking about something, don’t let a day pass where you don’t work toward it.”
-
 I am a computer scientist at Naval Surface Warfare Center Corona and a Department of Defense SMART Scholar pursuing research at the intersection of reinforcement learning, simulation, and intelligent systems. My work includes computer vision impact-scoring systems, missile test-data analysis software, and AI-agent regression testing frameworks.
 
 I earned my B.S. in Computer Science, *magna cum laude*, from Cal Poly Pomona, where I researched autonomous drone navigation, neuroevolutionary flight simulations, and reinforcement-learning evaluation frameworks in the Reconfigurable Space Computing Lab. I have also developed projects spanning physics simulation, robotics, computer graphics, and game theory—including a C-based minimax chess engine that has played more than 28,000 games on Lichess.
