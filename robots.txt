@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://kelechidavis.github.io/sitemap.xml
